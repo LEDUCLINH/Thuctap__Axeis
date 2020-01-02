@@ -1,0 +1,15 @@
+{
+  "name": "bai19",
+  "version": "1.0.0",
+  "description": "",
+  "main": "funWebcam.js",
+  "devDependencies": {
+    "browser-sync": "^2.12.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "browser-sync start --server --files \"*.css, *.html, *.js\""
+  },
+  "author": "",
+  "license": "ISC"
+}
