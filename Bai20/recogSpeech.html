@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Native Speech Recognition js30</title>
+    <link rel="stylesheet" href="recogSpeech.css">
+</head>
+<body>
+    <div class="words" contenteditable>
+    <script>
+        window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+        const recogination = new SpeechRecognition();
+        recogination.interimResults = true;
+        
+        let p = document.createElement('p');
+        const words = document.querySelector('.words');
+        words.appendChild(p);
+
+        recogination.addEventListener('result', e => {
+            console.log(e)
+        })
+        recogination.start();
+    </script>
+</body>
+</html>
