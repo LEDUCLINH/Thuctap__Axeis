@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Event Capture, Propagation, Bubbling and Once</title>
+    <link rel="stylesheet" href="eventJS.css">
+</head>
+<body>
+    <div class="one"> One
+        <div class="two"> Two
+          <div class="three"> Three
+          </div>
+        </div>
+      </div>
+    <script>
+        const divs = document.querySelectorAll('div');
+        function event(e) {
+            e.stopPropagation();
+            console.log(this.classList.value)
+          
+        }
+        divs.forEach(div => div.addEventListener('click', event,{
+            capture: true,
+            once: true
+        }));
+    </script>
+</body>
+</html>
