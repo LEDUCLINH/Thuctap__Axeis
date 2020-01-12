@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vanilla JS Countdown Timer</title>
+    <link rel="stylesheet" href="countDown.css">
+</head>
+<body>
+    <div class="clock">
+        <span id="hours"></span>
+        <span id="minutes"></span>
+        <span id="seconds"></span>
+    </div>
+    <script>
+     
+   
+      const hoursHtml = document.querySelector('#hours');
+      const minutesHtml = document.querySelector('#minutes');
+      const secondsHtml = document.querySelector('#seconds');
+      function countDown(){
+        let date = new Date();
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let seconds = date.getSeconds();
+        hoursHtml.textContent = `${hours}:`;
+        minutesHtml.textContent = `${minutes}:`;
+        secondsHtml.textContent = `${seconds}`;
+        
+      }
+      setInterval(() => countDown(),1000);
+
+    </script>
+</body>
+</html>
